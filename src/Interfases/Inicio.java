@@ -1,24 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Interfases;
 
-import java.awt.BorderLayout;
-import javax.swing.JTabbedPane;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author ADMIN_01
  */
 public class Inicio extends javax.swing.JFrame {
+JPanel panelContenido;
 
-    /**
-     * Creates new form Inicio
-     */
-    public Inicio() {
+    
+    public Inicio() {     
         initComponents();
+        
         
     }
 
@@ -33,7 +32,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        table = new javax.swing.JPanel();
         carrerasBtn = new javax.swing.JButton();
         institutoBTN = new javax.swing.JButton();
 
@@ -57,11 +56,16 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 100));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 770, 500));
+        table.setBackground(new java.awt.Color(255, 255, 255));
+        table.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(table, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 770, 500));
 
         carrerasBtn.setText("Carreras");
+        carrerasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                carrerasBtnMouseClicked(evt);
+            }
+        });
         carrerasBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 carrerasBtnActionPerformed(evt);
@@ -92,26 +96,21 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void carrerasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carrerasBtnActionPerformed
-        Carreras ca = new Carreras ();
-        ca.setSize(770, 500);
-        ca.setLocation(0, 0);    
-        carrerasBtn.removeAll();
-        carrerasBtn.add(ca, BorderLayout.CENTER);
-        carrerasBtn.revalidate();
-        carrerasBtn.repaint();
-        
+ CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
+    // Mostrar el panel de contenido
+    cardLayout.show(getContentPane(), "contenido");
+   
+
         
     }//GEN-LAST:event_carrerasBtnActionPerformed
 
     private void institutoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTNActionPerformed
-        Institucion in = new Institucion ();
-        in.setSize(770, 500);
-        in.setLocation(0, 0);    
-        carrerasBtn.removeAll();
-        carrerasBtn.add(in, BorderLayout.CENTER);
-        carrerasBtn.revalidate();
-        carrerasBtn.repaint();
+        
     }//GEN-LAST:event_institutoBTNActionPerformed
+
+    private void carrerasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carrerasBtnMouseClicked
+     
+    }//GEN-LAST:event_carrerasBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -152,7 +151,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton carrerasBtn;
     private javax.swing.JButton institutoBTN;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel table;
     // End of variables declaration//GEN-END:variables
 }
