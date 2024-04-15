@@ -5,6 +5,9 @@
  */
 package Interfases;
 
+import java.awt.BorderLayout;
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author ADMIN_01
@@ -16,6 +19,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        
     }
 
     /**
@@ -27,21 +31,87 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        carrerasBtn = new javax.swing.JButton();
+        institutoBTN = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(51, 153, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 980, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 100));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 770, 500));
+
+        carrerasBtn.setText("Carreras");
+        carrerasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carrerasBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(carrerasBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, 40));
+
+        institutoBTN.setText("Institucion");
+        institutoBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutoBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(institutoBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void carrerasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carrerasBtnActionPerformed
+        Carreras ca = new Carreras ();
+        ca.setSize(770, 500);
+        ca.setLocation(0, 0);    
+        carrerasBtn.removeAll();
+        carrerasBtn.add(ca, BorderLayout.CENTER);
+        carrerasBtn.revalidate();
+        carrerasBtn.repaint();
+        
+        
+    }//GEN-LAST:event_carrerasBtnActionPerformed
+
+    private void institutoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTNActionPerformed
+        Institucion in = new Institucion ();
+        in.setSize(770, 500);
+        in.setLocation(0, 0);    
+        carrerasBtn.removeAll();
+        carrerasBtn.add(in, BorderLayout.CENTER);
+        carrerasBtn.revalidate();
+        carrerasBtn.repaint();
+    }//GEN-LAST:event_institutoBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +149,10 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton carrerasBtn;
+    private javax.swing.JButton institutoBTN;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
