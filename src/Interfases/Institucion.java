@@ -5,6 +5,14 @@
  */
 package Interfases;
 
+import clases.ConexionBD;
+import com.sun.jdi.connect.spi.Connection;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author ADMIN_01
@@ -27,23 +35,246 @@ public class Institucion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        descripcioninstitucion = new javax.swing.JTextField();
+        nombreinstitucion = new javax.swing.JTextField();
+        idinstitucion = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        botoneliminar = new javax.swing.JLabel();
+        botonguardar = new javax.swing.JLabel();
+        botonmodificar = new javax.swing.JLabel();
+        botonbuscar = new javax.swing.JLabel();
+        busqueda = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("jButton1");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 259, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Open Sans", 1, 48)); // NOI18N
+        jLabel1.setText("INSTITUCIONES");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 400, 60));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Instituciones");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 72, -1, -1));
+        jLabel2.setText("INGRESE LA DESCRIPCION DE LA INSTITUCION:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 230, 50));
+
+        jLabel3.setText("INGRESE EL NOMBRE DE LA INSTITUCION:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 220, 50));
+
+        jLabel4.setText("INGRESE EL ID DE LA INSTITUCION:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 220, 50));
+        add(descripcioninstitucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 290, 30));
+        add(nombreinstitucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 290, 30));
+        add(idinstitucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 290, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/CONFIRMAR.png"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
+
+        botoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/ELIMINAR.png"))); // NOI18N
+        botoneliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botoneliminarMouseClicked(evt);
+            }
+        });
+        add(botoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, 30));
+
+        botonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/GUARDAR.png"))); // NOI18N
+        botonguardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonguardarMouseClicked(evt);
+            }
+        });
+        add(botonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 30, 30));
+
+        botonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/MODIFICAR.png"))); // NOI18N
+        botonmodificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonmodificarMouseClicked(evt);
+            }
+        });
+        add(botonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 40, 30));
+
+        botonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/BUSCAR.png"))); // NOI18N
+        botonbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonbuscarMouseClicked(evt);
+            }
+        });
+        add(botonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, -1));
+        add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 310, 120, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonguardarMouseClicked
+        // TODO add your handling code here:
+        // Crear una instancia de la clase ConexionBD para interactuar con la base de datos
+        java.sql.Connection conexion = ConexionBD.obtenerConexion();
+
+        try {
+            // Verificar que todos los campos estén completos
+            if (descripcioninstitucion.getText().isEmpty() || nombreinstitucion.getText().isEmpty()
+                    || idinstitucion.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos antes de ingresar", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return; // Detener la ejecución si los campos no están completos
+            }
+
+            // Sentencia SQL para insertar una nueva institución
+            String sql = "INSERT INTO instituciones (id_insti, descrip_insti, nombre_insti) VALUES (?, ?, ?)";
+
+            // Preparar la sentencia SQL
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            statement.setString(1, idinstitucion.getText());
+            statement.setString(2, descripcioninstitucion.getText());
+            statement.setString(3, nombreinstitucion.getText());
+
+            // Ejecutar la sentencia SQL
+            statement.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Institución ingresada correctamente");
+
+            // Otros procesos como actualizar la tabla, refrescar, limpiar campos, etc.
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al ingresar la institución: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            // Cerrar la conexión
+            ConexionBD.cerrarConexion();
+        }
+    }//GEN-LAST:event_botonguardarMouseClicked
+
+    private void botoneliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botoneliminarMouseClicked
+        // TODO add your handling code here:
+        // Crear una instancia de la clase ConexionBD para interactuar con la base de datos
+        java.sql.Connection conexion = ConexionBD.obtenerConexion();
+
+        try {
+            // Verificar que el campo de ID de institución no esté vacío
+            if (idinstitucion.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor ingrese el ID de la institución a eliminar", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return; // Detener la ejecución si el campo de ID está vacío
+            }
+
+            // Sentencia SQL para eliminar una institución
+            String sql = "DELETE FROM instituciones WHERE id_insti = ?";
+
+            // Preparar la sentencia SQL
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            statement.setString(1, idinstitucion.getText());
+
+            // Ejecutar la sentencia SQL
+            int filasAfectadas = statement.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                JOptionPane.showMessageDialog(null, "Institución eliminada correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ninguna institución con el ID proporcionado", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+            // Otros procesos como actualizar la tabla, refrescar, limpiar campos, etc.
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al eliminar la institución: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            // Cerrar la conexión
+            ConexionBD.cerrarConexion();
+        }
+    }//GEN-LAST:event_botoneliminarMouseClicked
+
+    private void botonmodificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonmodificarMouseClicked
+        // TODO add your handling code here:
+        // Crear una instancia de la clase ConexionBD para interactuar con la base de datos
+        java.sql.Connection conexion = ConexionBD.obtenerConexion();
+
+        try {
+            // Verificar que todos los campos estén completos
+            if (idinstitucion.getText().isEmpty() || descripcioninstitucion.getText().isEmpty() || nombreinstitucion.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos antes de modificar", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return; // Detener la ejecución si los campos no están completos
+            }
+
+            // Sentencia SQL para actualizar una institución
+            String sql = "UPDATE instituciones SET descrip_insti = ?, nombre_insti = ? WHERE id_insti = ?";
+
+            // Preparar la sentencia SQL
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            statement.setString(1, descripcioninstitucion.getText());
+            statement.setString(2, nombreinstitucion.getText());
+            statement.setString(3, idinstitucion.getText());
+
+            // Ejecutar la sentencia SQL
+            int filasAfectadas = statement.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                JOptionPane.showMessageDialog(null, "Institución modificada correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ninguna institución con el ID proporcionado", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+            // Otros procesos como actualizar la tabla, refrescar, limpiar campos, etc.
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar la institución: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            // Cerrar la conexión
+            ConexionBD.cerrarConexion();
+        }
+
+    }//GEN-LAST:event_botonmodificarMouseClicked
+
+    private void botonbuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonbuscarMouseClicked
+        // TODO add your handling code here:
+        // Crear una instancia de la clase ConexionBD para interactuar con la base de datos
+        java.sql.Connection conexion = ConexionBD.obtenerConexion();
+
+        try {
+            // Verificar que el campo de ID de institución no esté vacío
+            if (busqueda.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor ingrese el ID de la institución a buscar", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return; // Detener la ejecución si el campo de ID está vacío
+            }
+
+            // Sentencia SQL para buscar una institución por su ID
+            String sql = "SELECT descrip_insti, nombre_insti FROM instituciones WHERE id_insti = ?";
+
+            // Preparar la sentencia SQL
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            statement.setString(1, idinstitucion.getText());
+
+            // Ejecutar la consulta SQL
+            ResultSet resultado = statement.executeQuery();
+
+            // Verificar si se encontró una institución con el ID proporcionado
+            if (resultado.next()) {
+                // Si se encontró, cargar los datos en los campos de texto
+                descripcioninstitucion.setText(resultado.getString("descrip_insti"));
+                nombreinstitucion.setText(resultado.getString("nombre_insti"));
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ninguna institución con el ID proporcionado", "ERROR", JOptionPane.ERROR_MESSAGE);
+                // Limpiar los campos de texto
+                descripcioninstitucion.setText("");
+                nombreinstitucion.setText("");
+            }
+
+            // Otros procesos, si los hay
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar la institución: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            // Cerrar la conexión
+            ConexionBD.cerrarConexion();
+        }
+    }//GEN-LAST:event_botonbuscarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel botonbuscar;
+    private javax.swing.JLabel botoneliminar;
+    private javax.swing.JLabel botonguardar;
+    private javax.swing.JLabel botonmodificar;
+    private javax.swing.JTextField busqueda;
+    private javax.swing.JTextField descripcioninstitucion;
+    private javax.swing.JTextField idinstitucion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField nombreinstitucion;
     // End of variables declaration//GEN-END:variables
 }

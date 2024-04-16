@@ -81,7 +81,7 @@ public class Carreras extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 650, 120));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/crear.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/CONFIRMAR.png"))); // NOI18N
         jButton5.setText("GUARDAR");
         add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 130, 40));
 
@@ -92,15 +92,15 @@ public class Carreras extends javax.swing.JPanel {
         jLabel4.setText("Filtro de Busqueda");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/boton-eliminar (1).png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/ELIMINAR.png"))); // NOI18N
         jButton6.setText("ELIMINAR");
         add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 130, 40));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar (1).png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/MODIFICAR.png"))); // NOI18N
         jButton7.setText("MODIFICAR");
         add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 130, 40));
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/busqueda.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/BUSCAR.png"))); // NOI18N
         jButton8.setText("BUSCAR");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
