@@ -35,6 +35,8 @@ public class Institucion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,6 +50,9 @@ public class Institucion extends javax.swing.JPanel {
         botonmodificar = new javax.swing.JLabel();
         botonbuscar = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+
+        jScrollPane1.setViewportView(jEditorPane1);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,6 +108,10 @@ public class Institucion extends javax.swing.JPanel {
         });
         add(botonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, -1));
         add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 310, 120, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 750, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonguardarMouseClicked
@@ -270,11 +279,14 @@ public class Institucion extends javax.swing.JPanel {
     private javax.swing.JTextField busqueda;
     private javax.swing.JTextField descripcioninstitucion;
     private javax.swing.JTextField idinstitucion;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nombreinstitucion;
     // End of variables declaration//GEN-END:variables
 }

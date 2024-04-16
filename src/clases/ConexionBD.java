@@ -12,8 +12,8 @@ import java.sql.SQLException;
 public class ConexionBD {
 
     private static final String URL = "jdbc:mysql://localhost:3306/Dump20240415 (1)";
-    private static final String USUARIO = "usuario";
-    private static final String CONTRASENA = "1234";
+    private static final String USUARIO = "Gilson";
+    private static final String CONTRASENA = "12345";
     private static Connection conexion;
 
     public static Connection obtenerConexion() {

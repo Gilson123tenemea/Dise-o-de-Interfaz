@@ -44,6 +44,8 @@ public class Carreras extends javax.swing.JPanel {
         jButton8 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         panelContenido = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         jTextField1.setText("jTextField1");
 
@@ -111,17 +113,37 @@ public class Carreras extends javax.swing.JPanel {
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 230, 30));
 
         panelContenido.setBackground(new java.awt.Color(255, 255, 255));
+        panelContenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
-        panelContenido.setLayout(panelContenidoLayout);
-        panelContenidoLayout.setHorizontalGroup(
-            panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
         );
-        panelContenidoLayout.setVerticalGroup(
-            panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
+
+        panelContenido.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 14, 10, 480));
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+
+        panelContenido.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 10, 480));
 
         add(panelContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 510));
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +163,8 @@ public class Carreras extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;

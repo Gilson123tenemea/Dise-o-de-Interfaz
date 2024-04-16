@@ -32,60 +32,133 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         PANELPRINCIPAL = new javax.swing.JPanel();
         carrerasBtn = new javax.swing.JButton();
         institutoBTN = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        institutoBTN1 = new javax.swing.JButton();
+        institutoBTN2 = new javax.swing.JButton();
+        institutoBTN3 = new javax.swing.JButton();
+        institutoBTN4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/garantizar.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 130));
+
         jPanel3.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("SISTEMA DE MATRICULAS");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 480, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 100));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Periodo Academico 2024-2025");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 100));
 
         PANELPRINCIPAL.setBackground(new java.awt.Color(255, 255, 255));
         PANELPRINCIPAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(PANELPRINCIPAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 780, 500));
 
+        carrerasBtn.setBackground(new java.awt.Color(255, 255, 255));
+        carrerasBtn.setForeground(new java.awt.Color(0, 0, 0));
+        carrerasBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/profesional.png"))); // NOI18N
         carrerasBtn.setText("Carreras");
+        carrerasBtn.setBorder(null);
         carrerasBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 carrerasBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(carrerasBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, 40));
+        jPanel1.add(carrerasBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 40));
 
-        institutoBTN.setText("Institucion");
+        institutoBTN.setBackground(new java.awt.Color(255, 255, 255));
+        institutoBTN.setForeground(new java.awt.Color(0, 0, 0));
+        institutoBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/institucion.png"))); // NOI18N
+        institutoBTN.setBorder(null);
         institutoBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 institutoBTNActionPerformed(evt);
             }
         });
-        jPanel1.add(institutoBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+        jPanel1.add(institutoBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 170, 40));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 170, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, 20));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 170, 20));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 170, 20));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 170, 20));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 170, 20));
+
+        institutoBTN1.setBackground(new java.awt.Color(255, 255, 255));
+        institutoBTN1.setForeground(new java.awt.Color(0, 0, 0));
+        institutoBTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/institucion.png"))); // NOI18N
+        institutoBTN1.setText("Institucion");
+        institutoBTN1.setBorder(null);
+        institutoBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutoBTN1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(institutoBTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 170, 40));
+
+        institutoBTN2.setBackground(new java.awt.Color(255, 255, 255));
+        institutoBTN2.setForeground(new java.awt.Color(0, 0, 0));
+        institutoBTN2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/profesional.png"))); // NOI18N
+        institutoBTN2.setBorder(null);
+        institutoBTN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutoBTN2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(institutoBTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 170, 40));
+
+        institutoBTN3.setBackground(new java.awt.Color(255, 255, 255));
+        institutoBTN3.setForeground(new java.awt.Color(0, 0, 0));
+        institutoBTN3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/institucion.png"))); // NOI18N
+        institutoBTN3.setBorder(null);
+        institutoBTN3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutoBTN3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(institutoBTN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 170, 40));
+
+        institutoBTN4.setBackground(new java.awt.Color(255, 255, 255));
+        institutoBTN4.setForeground(new java.awt.Color(0, 0, 0));
+        institutoBTN4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CRUD/profesional.png"))); // NOI18N
+        institutoBTN4.setBorder(null);
+        institutoBTN4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutoBTN4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(institutoBTN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
 
         pack();
@@ -99,6 +172,19 @@ public class Inicio extends javax.swing.JFrame {
         carrerasBtn.add(ca, BorderLayout.CENTER);
         carrerasBtn.revalidate();
         carrerasBtn.repaint();
+        
+         ca.setSize(770, 500);
+        ca.setLocation(0, 0);
+
+        // Eliminar todos los componentes del panel principal
+        PANELPRINCIPAL.removeAll();
+
+        // Agregar el panel Institucion al centro del panel principal
+        PANELPRINCIPAL.add(ca, BorderLayout.CENTER);
+
+        // Validar y repintar el panel principal para que se actualice con el nuevo componente
+        PANELPRINCIPAL.revalidate();
+        PANELPRINCIPAL.repaint();
 
 
     }//GEN-LAST:event_carrerasBtnActionPerformed
@@ -130,6 +216,22 @@ public class Inicio extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_institutoBTNActionPerformed
+
+    private void institutoBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_institutoBTN1ActionPerformed
+
+    private void institutoBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTN2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_institutoBTN2ActionPerformed
+
+    private void institutoBTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTN3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_institutoBTN3ActionPerformed
+
+    private void institutoBTN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutoBTN4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_institutoBTN4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +272,20 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel PANELPRINCIPAL;
     private javax.swing.JButton carrerasBtn;
     private javax.swing.JButton institutoBTN;
+    private javax.swing.JButton institutoBTN1;
+    private javax.swing.JButton institutoBTN2;
+    private javax.swing.JButton institutoBTN3;
+    private javax.swing.JButton institutoBTN4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     // End of variables declaration//GEN-END:variables
 }
